@@ -1,6 +1,24 @@
 # Restaurant-Reservation-System_React-Vite.js_Java-SpringBoot_MySQL
-This is a restaurant reservation system project built with Java Spring Boot for the backend and React with Vite.js for the frontend, using MySQL as the database. The system follows a layered architecture and supports multiple user roles, including Admin, Manager, Restaurant Owner, Customer, and a special Quota Manager who can increase reservation limits. Each user has access to a personalized dashboard interface built with React, offering a smooth and interactive experience. The backend handles all CRUD operations through RESTful APIs, while the MySQL database is designed with complex relational structures to support high volumes of data interaction. This full-stack system showcases seamless integration between a modern frontend and a robust backend, making it suitable for real-world restaurant reservation management needs.
 
+This is a restaurant reservation system project built using Java Spring Boot for the backend and React with Vite.js for the frontend. The system uses MySQL as the database and follows a multi-layered architecture to ensure modularity and maintainability.
+
+The project supports multiple user roles, including:
+
+Admin
+
+Manager
+
+Restaurant Owner
+
+Customer
+
+Quota Manager (a special user role that can increase reservation quotas)
+
+Each user has access to their own dedicated dashboard panel, designed with React to provide a smooth and interactive GUI experience. CRUD operations for all users are seamlessly handled through the Spring Boot backend, which exposes well-structured RESTful APIs.
+
+The MySQL database has been designed to support complex relationships and high levels of data interaction, ensuring the system performs reliably even with extensive user activity.
+
+This full-stack project demonstrates the integration of a modern frontend with a robust backend and is suitable for real-world restaurant reservation management scenarios.
 # React + Vite Project Setup
 
 This project uses Vite for fast and efficient React development. 
