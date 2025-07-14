@@ -4,13 +4,13 @@ This is a restaurant reservation system project built using Java Spring Boot for
 
 The project supports multiple user roles, including:
 
-Admin
+- Admin
 
-Manager
+- Manager
 
-Restaurant Owner
+- Restaurant Owner
 
-Customer
+- Customer
 
 Quota Manager (a special user role that can increase reservation quotas)
 
