@@ -1,4 +1,4 @@
-# Restaurant-Reservation-System_React-Vite.js_Java-SpringBoot_MySQL
+# Restaurant-Reservation-System
 
 This is a restaurant reservation system project built using Java Spring Boot for the backend and React with Vite.js for the frontend. The system uses MySQL as the database and follows a multi-layered architecture to ensure modularity and maintainability.
 
