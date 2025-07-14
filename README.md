@@ -8,13 +8,13 @@ This project uses Vite for fast and efficient React development.
 
 Follow the steps below to set up the project:
 
-### 0. Install node.js
+### 1. Install node.js
 
 Go to the this website: https://nodejs.org/en
 
 And download and install 'node.js'.
 
-### 1. Initialize a React + Vite Project
+### 2. Initialize a React + Vite Project
 
 Open your terminal or command prompt and run the following command to create a new Vite project:
 
@@ -24,19 +24,19 @@ npm create vite@latest my-react-app --template react
 
 Replace `my-react-app` with your desired project name like our project name 'rrsystem-frontend'.
 
-### 2. Navigate to the Project Directory
+### 3. Navigate to the Project Directory
 
 ```sh
 cd rrsystem-frontend
 ```
 
-### 3. Install Dependencies
+### 4. Install Dependencies
 
 ```sh
 npm install
 ```
 
-### 4. Add Required Libraries
+### 5. Add Required Libraries
 
 Install FontAwesome and Schedule-X Theme Default:
 
@@ -58,7 +58,7 @@ Additionally, ensure that `Calendar.jsx` includes the Schedule-X theme import:
 import "@schedule-x/theme-default/dist/index.css";
 ```
 
-### 5. Start the Development Server
+### 6. Start the Development Server
 
 To run the project, use the following command:
 
