@@ -1,0 +1,942 @@
+/* COMMON STYLES */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --main-color: #025596;
+  --second-color: #b2ccdf;
+  --third-color: #fcfdfe;
+  --fourth-color: #6799c0;
+  --fifth-color: #2a70a6;
+  --header-height: 3rem;
+  --nav-width: 68px;
+  --z-fixed: 100;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: var(--header-height) 0 0 0;
+  padding: 0 1rem;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  transition: .5s;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: var(--white-color);
+  z-index: var(--z-fixed);
+  transition: .5s;
+}
+
+.header_toggle {
+  color: var(--first-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.header_img {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.header_img img {
+  width: 40px;
+}
+
+/* Sidebar */
+.l-navbar {
+  position: fixed;
+  top: 0;
+  left: -30%;
+  width: var(--nav-width);
+  height: 100vh;
+  background-color: var(--first-color);
+  padding: .5rem 1rem 0 0;
+  transition: .5s;
+  z-index: var(--z-fixed);
+}
+
+.nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.nav_logo, .nav_link {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 1rem;
+  padding: .5rem 0 .5rem 1.5rem;
+}
+
+.nav_logo {
+  margin-bottom: 2rem;
+}
+
+.nav_logo-icon {
+  font-size: 1.25rem;
+  color: var(--white-color);
+}
+
+.nav_logo-name {
+  color: var(--white-color);
+  font-weight: 700;
+}
+
+.nav_link {
+  position: relative;
+  color: var(--first-color-light);
+  margin-bottom: 1.5rem;
+  transition: .3s;
+}
+
+.nav_link:hover {
+  color: var(--white-color);
+}
+
+.nav_icon {
+  font-size: 1.25rem;
+}
+
+.show {
+  left: 0;
+}
+
+.body-pd {
+  padding-left: calc(var(--nav-width) + 1rem);
+}
+
+.active {
+  color: var(--white-color);
+}
+
+.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 32px;
+  background-color: var(--white-color);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive */
+@media screen and (min-width: 768px) {
+  body {
+    margin: calc(var(--header-height) + 1rem) 0 0 0;
+    padding-left: calc(var(--nav-width) + 2rem);
+  }
+
+  .header {
+    height: calc(var(--header-height) + 1rem);
+    padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+  }
+
+  .header_img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header_img img {
+    width: 45px;
+  }
+
+  .l-navbar {
+    left: 0;
+    padding: 1rem 1rem 0 0;
+  }
+
+  .show {
+    width: calc(var(--nav-width) + 156px);
+  }
+
+  .body-pd {
+    padding-left: calc(var(--nav-width) + 188px);
+  }
+}
+
+#content {
+  margin-top: 60px; /* Header yüksekliği kadar boşluk bırak */
+  margin-left: 70px; /* Sidebar açıkken kayma olmaması için */
+  padding: 20px;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Sidebar açılınca content'i kaydır */
+.body-pd #content {
+  margin-left: 230px;
+}
+
+td, th, tr {
+  vertical-align: middle !important;
+}
+
+/* CUSTOMERS PAGES */
+
+.pagination {
+  justify-content: center;
+}
+
+button.page-link {
+  color: white;
+  background-color: var(--main-color);
+  border: none;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+button.page-link:active {
+  background-color: var(--main-color);
+}
+
+.page-item.active .page-link {
+  background-color: var(--fifth-color) !important;
+  border: none;
+}
+
+button.page-link:hover {
+  background-color: #e9ecef;
+  border: none;
+  color: var(--main-color); 
+  text-decoration: none;
+}
+
+button.page-link:focus {
+  background-color: #e9ecef;
+  border: none;
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* MANAGER PAGES */
+
+.add-manager-div{
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+}
+
+.add-manager-form {
+  padding: 50px;
+}
+
+.btn-add-manager {
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-add-manager:hover {
+  background-color: var(--second-color);
+}
+
+.btn-div-add-manager {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* PRICES PAGE */
+
+.card-price {
+  min-height: 400px;
+}
+
+.card-body-price {
+  background-color: #f1f1f1;
+}
+
+.btn-price {
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-price:hover {
+  background-color: var(--fifth-color);
+}
+
+.card-title-price {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+
+.card-text-price {
+  font-size: 18px;
+  margin-bottom: 60px;
+}
+
+.card-label-price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-price-input {
+  font-size: 24px !important;
+  text-align: center !important;
+}
+
+/* RESTAURANT PAGE */
+
+.restaurant-link {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.restaurant-link:hover {
+  color: var(--fifth-color);
+  text-decoration: none;
+}
+
+.chart-restaurant-div {
+  padding: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.chart-restaurant-1 {
+  background-color: white;
+  width: 88%;
+  height: 600px !important;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card-restaurant {
+  border-style: none;
+  min-height: 350px;
+}
+
+.card-container-restaurant {
+  margin-bottom: 40px;
+}
+
+.card-title-restaurant {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+
+.card-text-restaurant {
+  font-size: 18px;
+  margin-bottom: 60px;
+}
+
+.card-label-restaurant {
+  font-size: 56px;
+  font-style: italic;
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+/* CUISINE PAGE */
+
+.add-cuisine-div{
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+}
+
+.add-cuisine-form {
+  padding: 50px;
+}
+
+.btn-add-cuisine {
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-add-cuisine:hover {
+  background-color: var(--fifth-color);
+}
+
+.btn-div-add-cuisine {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* RESERVATION PAGE */
+
+
+.chart-reservation-div {
+  padding: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.chart-reservation-1 {
+  background-color: white;
+  width: 85%;
+  height: 600px !important;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card-reservation {
+  border-style: none;
+  min-height: 350px;
+}
+
+.card-container-reservation {
+  margin-bottom: 40px;
+}
+
+.card-title-reservation {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+
+.card-text-reservation {
+  font-size: 18px;
+  margin-bottom: 60px;
+}
+
+.card-label-reservation {
+  font-size: 56px;
+  font-style: italic;
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+/* LOCATION PAGE */
+
+.chart-location-div {
+  padding: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.chart-location-1 {
+  background-color: white;
+  width: 88%;
+  height: 600px !important;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* REVENUE PAGE */  
+
+
+.chart-revenue-div {
+  padding: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.chart-revenue-1 {
+  background-color: white;
+  width: 88%;
+  height: 600px !important;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card-revenue {
+  border-style: none;
+  min-height: 350px;
+}
+
+.card-container-revenue {
+  margin-bottom: 40px;
+}
+
+.card-title-revenue {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+
+.card-text-revenue {
+  font-size: 18px;
+  margin-bottom: 60px;
+}
+
+.card-label-revenue {
+  font-size: 56px;
+  font-style: italic;
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+/* MANAGER DASHBOARD */
+
+
+/* Update Restaurant Page */
+
+.update-restaurant-div{
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+}
+
+.update-restaurant-form {
+  padding: 50px;
+}
+
+.btn-update-restaurant {
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-update-restaurant:hover {
+  background-color: var(--fifth-color);
+}
+
+.btn-div-update-restaurant {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.update-attention {
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+
+.bold-select {
+  font-weight: bold;
+}
+
+/* Approve Request Page */
+
+
+.approve-request-div{
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+}
+
+.approve-request-form {
+  padding: 50px;
+}
+
+.btn-approve-request {
+  background-color: #15952c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-approve-request:hover {
+  background-color: #127d25;
+}
+
+.btn-div-approve-request {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.btn-deny-request {
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-deny-request:hover {
+  background-color: var(--fifth-color);
+}
+
+.btn-div-deny-request {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* RESTAURANT OWNER DASHBOARD */
+
+.add-table-div{
+  margin-left: 100px;
+  margin-right: 100px;
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 20px;
+  background-color: #f1f1f1;
+}
+
+.add-table-form {
+  padding: 50px;
+}
+
+.btn-add-table {
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-add-table:hover {
+  background-color: var(--fifth-color);
+}
+
+.btn-div-add-table {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.sx-react-calendar-wrapper {
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 800px;
+  max-height: 100vh;
+}
+
+/* Create Sessions Page */
+
+.card-div-session {
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+  padding: 80px;
+}
+
+.create-session-div {
+  margin-left: 100px;
+  margin-right: 100px;
+  border-radius: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 20px;
+  background-color: #f1f1f1;
+}
+
+.pagination-div {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.page-link {
+  color: var(--main-color);
+}
+
+.btn-create-session {
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-create-session:hover {
+  background-color: var(--fifth-color);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) grayscale(100%) brightness(0) contrast(100%);
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) grayscale(100%) brightness(0) contrast(100%);
+}
+
+/* Calendar View */
+
+:root {
+  --sx-color-primary: var(--main-color) !important; 
+  --sx-color-on-primary-container: #fff !important;
+  --sx-color-primary-container: #f49778 !important;
+}
+
+.sx__time-grid-event-title {
+  font-size: 16px !important;
+  
+}
+
+.sx__time-grid-event-time {
+  font-size: 14px !important;
+}
+
+.sx-event-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sx-event-status {
+  font-size: 12px;
+  color: #666;
+}
+
+
+/* EXTERNAL CUSTOMER PAGES */
+
+/* Reserve Page */
+
+.reserve-content {
+  background-image: url('/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reserve-div {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 550px;
+  width: 100%;
+}
+
+.reserve-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.reserve-form label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.reserve-form input,
+.reserve-form select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.reserve-button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--main-color) !important;
+  color: white;
+  border: none !important;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.reserve-button:hover {
+  background-color: var(--fifth-color) !important;
+}
+
+.logo-div {
+  margin-top: 2rem;
+}
+
+.reserve-logo {
+  height: 30%;
+  width: 30%;
+  transition: transform 0.3s;
+}
+
+.reserve-logo:hover {
+  transform: scale(1.1);
+}
+
+.phone-input {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.country-code {
+  flex: 1;
+}
+
+.phone-number {
+  flex: 2;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.popup-content h2 {
+  margin-bottom: 1rem;
+}
+
+.popup-content p {
+  margin-bottom: 1rem;
+}
+
+.popup-content button {
+  margin: 20px;
+  margin-top: 1rem;
+}
+
+/* Your Plan Page */
+
+.plan-price-ro {
+  padding-top: 30px;
+  font-size: 68px;
+  padding-bottom: 30px;
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+.card-price {
+  transition: transform 0.3s; /* Hover efekti için geçiş */
+}
+
+.card-price.premium {
+  transform: scale(1.1); /* Kartı büyüt */
+  z-index: 1; /* Diğer kartların üstünde görünmesi için */
+}
+
+.card-price:hover {
+  transform: scale(1.05); /* Hover efekti */
+}
+
+.btn-price:disabled {
+  background-color: #ccc; /* Gri arka plan */
+  color: #666; /* Gri metin rengi */
+  cursor: not-allowed; /* İzin verilmez imleci */
+  opacity: 0.6; /* Butonun opaklığını azalt */
+}
