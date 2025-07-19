@@ -131,6 +131,14 @@ This README provides a quick start guide for React + Vite. For more details, che
 - [Vite Official Documentation](https://vitejs.dev/)
 - [React Official Documentation](https://react.dev/)
 
+## 📺 Project Overview Video
+
+You can watch a detailed walkthrough of the project on YouTube:
+
+🔗 [https://youtu.be/uJeAPVFtN08](https://youtu.be/uJeAPVFtN08)
+
+This video explains the features and structure of the **Rezal Restaurant Reservation System** project.
+
 ## License
 
 This project is licensed under the MIT License.
