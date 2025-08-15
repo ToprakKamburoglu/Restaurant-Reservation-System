@@ -141,7 +141,7 @@ This video explains the features and structure of the **Rezal Restaurant Reserva
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
 
 
 
