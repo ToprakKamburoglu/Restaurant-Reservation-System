@@ -139,7 +139,7 @@ The system follows a layered architecture pattern:
 | ![Home](images/Home1.png) | ![Pricing](images/Pricing2.png) | ![Features](images/Features3.png) | ![Contact](images/Contact4.png) | ![Login](images/Login5.png) |
 
 ### Manager Dashboard
-| Home | Restaurant List | Requests | Invoices | Revenue | Settings |
+| Home | Restaurant List | Requests | Invoices | Revenue | Change Password |
 |------|----------------|----------|----------|---------|----------|
 | ![Manager Home](images/ManagerHome1.png) | ![Restaurant List](images/ManagerRestaurantList2.png) | ![Requests](images/ManagerRestaurantRequest3.png) | ![Invoices](images/ManagerInvoices4.png) | ![Revenue](images/ManagerRevenue5.png) | ![Change Password](images/ManagerChangePassword6.png) |
 
