@@ -6,20 +6,23 @@ A comprehensive full-stack restaurant reservation system built with Java Spring 
 
 ## 📋 Table of Contents
 
-- [About](#about)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Architecture](#architecture)
-- [User Roles](#user-roles)
-- [Screenshots](#screenshots)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [API Documentation](#api-documentation)
-- [Database Schema](#database-schema)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Video Demo](#video-demo)
+| Section              | Link                         |
+|----------------------|------------------------------|
+| About                | [About](#about)              |
+| Features             | [Features](#features)        |
+| Tech Stack           | [Tech Stack](#tech-stack)    |
+| Architecture         | [Architecture](#architecture)|
+| User Roles           | [User Roles](#user-roles)    |
+| Screenshots          | [Screenshots](#screenshots)  |
+| Installation         | [Installation](#installation)|
+| Configuration        | [Configuration](#configuration)|
+| API Documentation    | [API Documentation](#api-documentation)|
+| Database Schema      | [Database Schema](#database-schema)|
+| Usage                | [Usage](#usage)              |
+| Contributing         | [Contributing](#contributing)|
+| License              | [License](#license)          |
+| Video Demo           | [Video Demo](#video-demo)    |
+
 
 ## 📖 About
 
@@ -131,7 +134,7 @@ The system follows a layered architecture pattern:
 - Increase quota limits for restaurants
 - Handle quota-related payments and upgrades
 
-## 📸 Screenshots
+## 📚 Pages
 
 ### Promotion Pages
 | Home | Pricing | Features | Contact | Login |
@@ -398,10 +401,6 @@ The video demonstrates:
 - API integration examples
 - Payment and quota management
 
-## 📞 Support
-
-For support, email support@rezal.com or join our Slack channel.
-
 ## 🚀 Deployment
 
 ### Production Deployment
@@ -424,6 +423,4 @@ For support, email support@rezal.com or join our Slack channel.
 
 ---
 
-**Built with ❤️ by the Rezal Team**
-
-*Making restaurant reservations simple, efficient, and scalable.*
+For technical support or collaboration opportunities, please contact toprakkamburoglu@gmail.com
