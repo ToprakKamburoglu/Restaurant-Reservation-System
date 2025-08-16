@@ -1,147 +1,429 @@
-# Restaurant-Reservation-System
+# Rezal - Restaurant Reservation System
 
-This is a restaurant reservation system project built using Java Spring Boot for the backend and React with Vite.js for the frontend. The system uses MySQL as the database and follows a multi-layered architecture to ensure modularity and maintainability.
+![Rezal Logo](images/logo.png)
 
-The project supports multiple user roles, including:
+A comprehensive full-stack restaurant reservation system built with Java Spring Boot, React (Vite.js), and MySQL. Rezal provides a complete API service solution that restaurants can purchase and integrate into their operations, featuring multi-role dashboards and advanced reservation management capabilities.
 
-- Admin
+## 📋 Table of Contents
 
-- Manager
+- [About](#about)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Architecture](#architecture)
+- [User Roles](#user-roles)
+- [Screenshots](#screenshots)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [API Documentation](#api-documentation)
+- [Database Schema](#database-schema)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Video Demo](#video-demo)
 
-- Restaurant Owner
+## 📖 About
 
-- Customer
+Rezal is a full-stack restaurant reservation system designed as a comprehensive API service that restaurants can purchase and implement. The system features a layered architecture with RESTful APIs, supporting multiple user roles including Admin, Manager, Restaurant Owner, Customer, and Quota Manager. Each role has its own React-based dashboard with specific functionalities and permissions.
 
-Quota Manager (a special user role that can increase reservation quotas)
+The system enables restaurants to:
+- Manage table reservations efficiently
+- Handle multiple restaurant locations
+- Process payments and invoicing
+- Analyze reservation data and revenue
+- Provide customers with seamless booking experiences
 
-Each user has access to their own dedicated dashboard panel, designed with React to provide a smooth and interactive GUI experience. CRUD operations for all users are seamlessly handled through the Spring Boot backend, which exposes well-structured RESTful APIs.
+## ✨ Features
 
-The MySQL database has been designed to support complex relationships and high levels of data interaction, ensuring the system performs reliably even with extensive user activity.
+### Core Functionality
+- **Multi-role Authentication & Authorization** with JWT
+- **Real-time Reservation Management** with calendar and list views
+- **Table Management System** with capacity tracking
+- **Session-based Booking** with time slot management
+- **Payment Processing** with quota management
+- **Invoice Generation** and financial tracking
+- **Multi-restaurant Support** for restaurant chains
+- **Cuisine and Location Management**
+- **Revenue Analytics** and reporting
+- **API Key Management** for external integrations
 
-This full-stack project demonstrates the integration of a modern frontend with a robust backend and is suitable for real-world restaurant reservation management scenarios.
-# React + Vite Project Setup
+### Advanced Features
+- **Automated Session Deactivation** for expired time slots
+- **Email Notifications** for reservation confirmations
+- **Responsive Design** across all devices
+- **RESTful API Architecture** for easy integration
+- **Comprehensive Admin Panel** for system management
+- **Customer Reservation Portal** with external booking widgets
 
-This project uses Vite for fast and efficient React development. 
-## Installation
+## 🛠 Tech Stack
 
-Follow the steps below to set up the project:
+### Backend
+- **Java 17** - Programming language
+- **Spring Boot 3.x** - Application framework
+- **Spring Security** - Authentication and authorization
+- **Spring Data JPA** - Data persistence
+- **MySQL 9.1** - Relational database
+- **JWT** - Token-based authentication
+- **Maven** - Dependency management
 
-### 1. Install node.js
+### Frontend
+- **React 18** - UI library
+- **Vite.js** - Build tool and development server
+- **React Router** - Client-side routing
+- **Axios** - HTTP client
+- **Bootstrap** - CSS framework
+- **Font Awesome** - Icons
 
-Go to the this website: https://nodejs.org/en
+### Development Tools
+- **IntelliJ IDEA** - IDE
+- **MySQL Workbench** - Database management
+- **Postman** - API testing
+- **Git** - Version control
 
-And download and install 'node.js'.
+## 🏗 Architecture
 
-### 2. Initialize a React + Vite Project
+The system follows a layered architecture pattern:
 
-Open your terminal or command prompt and run the following command to create a new Vite project:
-
-```sh
-npm create vite@latest my-react-app --template react
+```
+┌─────────────────┐    ┌─────────────────┐
+│   Frontend      │    │   Backend       │
+│   (React)       │◄──►│ (Spring Boot)   │
+├─────────────────┤    ├─────────────────┤
+│ • Components    │    │ • Controllers   │
+│ • Services      │    │ • Services      │
+│ • Routing       │    │ • Repositories  │
+│ • State Mgmt    │    │ • Entities      │
+└─────────────────┘    └─────────────────┘
+                              │
+                       ┌─────────────────┐
+                       │     MySQL       │
+                       │   Database      │
+                       └─────────────────┘
 ```
 
-Replace `my-react-app` with your desired project name like our project name 'rrsystem-frontend'.
+## 👥 User Roles
 
-### 3. Navigate to the Project Directory
+### 1. **Admin**
+- System-wide management and oversight
+- Manage managers, customers, and restaurants
+- Configure pricing plans and system settings
+- Monitor invoices and system analytics
 
-```sh
-cd rrsystem-frontend
+### 2. **Manager**
+- Oversee multiple restaurants
+- Approve/deny restaurant registration requests
+- Generate revenue reports and analytics
+- Manage restaurant information updates
+
+### 3. **Restaurant Owner**
+- Manage restaurant details and table configurations
+- Create and manage reservation sessions
+- View reservations in calendar and list formats
+- Handle payments and view current plans
+- Access API keys for external integrations
+
+### 4. **Customer**
+- Browse and book restaurant reservations
+- Manage personal reservation history
+- Receive booking confirmations
+
+### 5. **Quota Manager**
+- Special role for managing reservation quotas
+- Increase quota limits for restaurants
+- Handle quota-related payments and upgrades
+
+## 📸 Screenshots
+
+### Promotion Pages
+| Home | Pricing | Features | Contact | Login |
+|------|---------|----------|---------|-------|
+| ![Home](images/Home1.png) | ![Pricing](images/Pricing2.png) | ![Features](images/Features2.png) | ![Contact](images/Contact4.png) | ![Login](images/Login5.png) |
+
+### Manager Dashboard
+| Home | Restaurant List | Requests | Invoices | Revenue | Settings |
+|------|----------------|----------|----------|---------|----------|
+| ![Manager Home](images/ManagerHome1.png) | ![Restaurant List](images/ManagerRestaurantList2.png) | ![Requests](images/ManagerRestaurantRequest3.png) | ![Invoices](images/ManagerInvoices4.png) | ![Revenue](images/ManagerRevenue5.png) | ![Change Password](images/ManagerChangePassword6.png) |
+
+### Admin Dashboard
+| Home | Manager List | Edit Prices | Location List |
+|------|-------------|-------------|---------------|
+| ![Admin Home](images/AdminHome1.png) | ![Manager List](images/AdminManagerList2.png) | ![Edit Prices](images/AdminEditPrices3.png) | ![Location List](images/AdminLocationList4.png) |
+
+### Restaurant Owner Dashboard
+| Home | Update Restaurant | Table Info | Create Sessions |
+|------|------------------|------------|-----------------|
+| ![Owner Home](images/RestoranOwnerHome1.png) | ![Update Restaurant](images/RestaurantOwnerUpdateRestaurant2.png) | ![Table Info](images/RestorantOwnerTableInformation3.png) | ![Create Sessions](images/RestorantOwnerCreateSession4.png) |
+
+| Calendar View | API Key | Your Plan | Update Profile |
+|---------------|---------|-----------|----------------|
+| ![Calendar](images/RestorantOwnerCalender5.png) | ![API Key](images/RestorantOwnerApiKey6.png) | ![Your Plan](images/RestaurantOwnerYourPlan7.png) | ![Update Profile](images/RestorantOwnerUpdateProfile8.png) |
+
+### Quota Management
+| Quota User | Payment |
+|------------|---------|
+| ![Quota User](images/QuatoUser1.png) | ![Payment](images/QuotaPayment2.png) |
+
+### Customer Interface
+| Booking Interface | Reservation Details |
+|------------------|-------------------|
+| ![Customer 1](images/Customer1.png) | ![Customer 2](images/Customer2.png) |
+
+## 🚀 Installation
+
+### Prerequisites
+- Java 17 or higher
+- Node.js 16+ and npm
+- MySQL 8.0+
+- Maven 3.6+
+
+### Backend Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone [repository-url]
+   cd rezal-backend
+   ```
+
+2. **Configure MySQL Database**
+   ```sql
+   CREATE DATABASE `restaurant-reservation-system`;
+   ```
+
+3. **Update application.properties**
+   ```properties
+   spring.datasource.url=jdbc:mysql://localhost:3306/restaurant-reservation-system
+   spring.datasource.username=your_username
+   spring.datasource.password=your_password
+   spring.jpa.hibernate.ddl-auto=update
+   ```
+
+4. **Install dependencies and run**
+   ```bash
+   mvn clean install
+   mvn spring-boot:run
+   ```
+
+### Frontend Setup
+
+1. **Navigate to frontend directory**
+   ```bash
+   cd rezal-frontend
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+### Database Setup
+
+Import the provided SQL dump file to set up the initial database structure:
+
+```bash
+mysql -u username -p restaurant-reservation-system < database-dump.sql
 ```
 
-### 4. Install Dependencies
+## ⚙️ Configuration
 
-```sh
-npm install
+### Environment Variables
+
+Create a `.env` file in the frontend directory:
+
+```env
+VITE_API_BASE_URL=http://localhost:8080
+VITE_APP_NAME=Rezal
 ```
 
-### 5. Add Required Libraries
+### Backend Configuration
 
-Install FontAwesome and Schedule-X Theme Default:
+Key configuration options in `application.properties`:
 
-```sh
-npm install @fortawesome/fontawesome-free
-npm install @schedule-x/theme-default
+```properties
+# Server Configuration
+server.port=8080
+
+# Database Configuration
+spring.datasource.url=jdbc:mysql://localhost:3306/restaurant-reservation-system
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+
+# JWT Configuration
+jwt.secret=your-secret-key
+jwt.expiration=86400000
+
+# Email Configuration
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=your-email@gmail.com
+spring.mail.password=your-app-password
 ```
 
-Then, import the required CSS files in your `main.jsx` or `App.jsx` file:
+## 📚 API Documentation
 
-```js
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import '@schedule-x/theme-default/dist/index.css';
+### Authentication Endpoints
+
+```http
+POST /api/auth/login
+POST /api/auth/register
+POST /api/auth/forgot-password
 ```
 
-Additionally, ensure that `Calendar.jsx` includes the Schedule-X theme import:
+### Restaurant Management
 
-```js
-import "@schedule-x/theme-default/dist/index.css";
+```http
+GET    /api/restaurants
+POST   /api/restaurants
+PUT    /api/restaurants/{id}
+DELETE /api/restaurants/{id}
 ```
 
-### 6. Start the Development Server
+### Reservation Management
 
-To run the project, use the following command:
-
-```sh
-npm run dev
+```http
+GET    /api/reservations
+POST   /api/reservations
+PUT    /api/reservations/{id}
+DELETE /api/reservations/{id}
 ```
 
-### Key Directories and Files
+### Session Management
 
-- **public/**: Contains static files and the main HTML file that serves as the entry point for the application.
-- **src/**: Contains all the source code for the application, including components, pages, styles, and assets.
-- **components/**: Houses reusable React components that can be used across different pages.
-- **pages/**: Contains page-specific components, organized by feature or section.
-- **styles/**: Includes global styles and CSS files.
-- **assets/**: Stores images and other static assets used in the application.
-- **App.jsx**: The main application component that sets up the routing and layout.
-- **main.jsx**: The entry point for the React application, where the app is rendered to the DOM.
-- **Calendar.jsx**: Ensure this file includes `import "@schedule-x/theme-default/dist/index.css";` for styling.
-
-This structure helps keep the project organized and makes it easier to maintain and scale. Adjust the structure and descriptions as needed to fit your specific project setup.
-
-## Additional Information
-
-### Using TypeScript
-If you want to work with TypeScript, initialize the project with:
-
-```sh
-npm create vite@latest rrsystem-frontend --template react-ts
+```http
+GET    /api/sessions/restaurant/{restaurantId}
+POST   /api/sessions
+PUT    /api/sessions/{id}
+DELETE /api/sessions/{id}
 ```
 
-### ESLint and Prettier Integration
-To improve code quality, you can install ESLint and Prettier:
+## 🗄️ Database Schema
 
-```sh
-npm install eslint prettier eslint-config-prettier eslint-plugin-prettier -D
+The system uses a relational database design with the following key entities:
+
+- **user-info**: User accounts and authentication
+- **restaurant-info**: Restaurant details and configuration
+- **table-info**: Table capacity and availability
+- **session-info**: Time slots for reservations
+- **reservation-info**: Booking details and customer information
+- **payment**: Payment plans and quota management
+- **invoices**: Financial transactions and billing
+- **cuisine**: Restaurant cuisine types
+- **location**: Geographic locations
+
+## 📖 Usage
+
+### For Restaurant Owners
+
+1. **Register your restaurant** through the manager approval process
+2. **Configure tables** and their capacities
+3. **Create time sessions** for available booking slots
+4. **Monitor reservations** through calendar and list views
+5. **Manage payments** and view your current plan
+6. **Access API keys** for external integrations
+
+### For Customers
+
+1. **Browse restaurants** by location and cuisine
+2. **Select available time slots** from the calendar
+3. **Make reservations** with party size and special requests
+4. **Receive confirmation** via email
+5. **Manage bookings** through the customer portal
+
+### For Managers
+
+1. **Review restaurant applications** and approve/deny requests
+2. **Monitor system usage** and generate reports
+3. **Manage restaurant information** and updates
+4. **Analyze revenue** and system performance
+
+## 🤝 Contributing
+
+We welcome contributions to Rezal! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Code Style Guidelines
+
+- Follow Java naming conventions for backend code
+- Use ESLint and Prettier for frontend code formatting
+- Write meaningful commit messages
+- Add unit tests for new features
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+```
+MIT License
+
+Copyright (c) 2025 Rezal Team
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
 
-Then, configure your `.eslintrc.cjs` file accordingly.
+## 🎥 Video Demo
 
-### Building the Project
-To compile the project for production:
+Watch our comprehensive demo video to see Rezal in action:
 
-```sh
-npm run build
-```
+[![Rezal Demo Video](https://img.youtube.com/vi/uJeAPVFtN08/maxresdefault.jpg)](https://www.youtube.com/watch?v=uJeAPVFtN08&pp=ygUOcmV6YWwgcmVzdG9yYW7SBwkJrQkBhyohjO8%3D)
 
-This command generates optimized files in the `dist/` directory.
+The video demonstrates:
+- Complete system overview and architecture
+- User role demonstrations
+- Reservation booking process
+- Admin and manager functionalities
+- API integration examples
+- Payment and quota management
+
+## 📞 Support
+
+For support, email support@rezal.com or join our Slack channel.
+
+## 🚀 Deployment
+
+### Production Deployment
+
+1. **Backend Deployment**
+   - Package the application: `mvn clean package`
+   - Deploy the JAR file to your server
+   - Configure production database settings
+   - Set up reverse proxy (Nginx/Apache)
+
+2. **Frontend Deployment**
+   - Build for production: `npm run build`
+   - Deploy the `dist` folder to your web server
+   - Configure environment variables for production
+
+3. **Database Setup**
+   - Set up MySQL in production environment
+   - Configure backup strategies
+   - Set up monitoring and logging
 
 ---
-This README provides a quick start guide for React + Vite. For more details, check out the official documentation:
 
-- [Vite Official Documentation](https://vitejs.dev/)
-- [React Official Documentation](https://react.dev/)
+**Built with ❤️ by the Rezal Team**
 
-## 📺 Project Overview Video
-
-You can watch a detailed walkthrough of the project on YouTube:
-
-🔗 [https://youtu.be/uJeAPVFtN08](https://youtu.be/uJeAPVFtN08)
-
-This video explains the features and structure of the **Rezal Restaurant Reservation System** project.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-
-
+*Making restaurant reservations simple, efficient, and scalable.*
