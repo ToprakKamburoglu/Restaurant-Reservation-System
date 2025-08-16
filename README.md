@@ -4,25 +4,7 @@
 
 A comprehensive full-stack restaurant reservation system built with Java Spring Boot, React (Vite.js), and MySQL. Rezal provides a complete API service solution that restaurants can purchase and integrate into their operations, featuring multi-role dashboards and advanced reservation management capabilities.
 
-## 📋 Table of Contents
-
-| Section              | Link                         |
-|----------------------|------------------------------|
-| About                | [About](#About)              |
-| Features             | [Features](#Features)        |
-| Tech Stack           | [Tech Stack](#Tech-stack)    |
-| Architecture         | [Architecture](#architecture)|
-| User Roles           | [User Roles](#user-roles)    |
-| Screenshots          | [Screenshots](#screenshots)  |
-| Installation         | [Installation](#installation)|
-| Configuration        | [Configuration](#configuration)|
-| API Documentation    | [API Documentation](#api-documentation)|
-| Database Schema      | [Database Schema](#database-schema)|
-| Usage                | [Usage](#usage)              |
-| Contributing         | [Contributing](#contributing)|
-| License              | [License](#license)          |
-| Video Demo           | [Video Demo](#video-demo)    |
-
+## 📋 Table of Contents - [About](#about) - [Features](#features) - [Tech Stack](#tech-stack) - [Architecture](#architecture) - [User Roles](#user-roles) - [Screenshots](#screenshots) - [Installation](#installation) - [Configuration](#configuration) - [API Documentation](#api-documentation) - [Database Schema](#database-schema) - [Usage](#usage) - [Contributing](#contributing) - [License](#license) - [Video Demo](#video-demo)
 
 ## 📖 About
 
