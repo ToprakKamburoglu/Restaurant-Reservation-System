@@ -8,9 +8,9 @@ A comprehensive full-stack restaurant reservation system built with Java Spring 
 
 | Section              | Link                         |
 |----------------------|------------------------------|
-| About                | [About](#about)              |
-| Features             | [Features](#features)        |
-| Tech Stack           | [Tech Stack](#tech-stack)    |
+| About                | [About](#About)              |
+| Features             | [Features](#Features)        |
+| Tech Stack           | [Tech Stack](#Tech-stack)    |
 | Architecture         | [Architecture](#architecture)|
 | User Roles           | [User Roles](#user-roles)    |
 | Screenshots          | [Screenshots](#screenshots)  |
