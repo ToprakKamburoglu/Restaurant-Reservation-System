@@ -136,7 +136,7 @@ The system follows a layered architecture pattern:
 ### Promotion Pages
 | Home | Pricing | Features | Contact | Login |
 |------|---------|----------|---------|-------|
-| ![Home](images/Home1.png) | ![Pricing](images/Pricing2.png) | ![Features](images/Features2.png) | ![Contact](images/Contact4.png) | ![Login](images/Login5.png) |
+| ![Home](images/Home1.png) | ![Pricing](images/Pricing2.png) | ![Features](images/Features3.png) | ![Contact](images/Contact4.png) | ![Login](images/Login5.png) |
 
 ### Manager Dashboard
 | Home | Restaurant List | Requests | Invoices | Revenue | Settings |
