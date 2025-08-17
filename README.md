@@ -1,6 +1,6 @@
 # Rezal - Restaurant Reservation System
 
-![Rezal Logo](images/logo.png)
+<img src="images/logo.png" alt="Rezal Logo" width="300">
 
 A comprehensive full-stack restaurant reservation system built with Java Spring Boot, React (Vite.js), and MySQL. Rezal provides a complete API service solution that restaurants can purchase and integrate into their operations, featuring multi-role dashboards and advanced reservation management capabilities.
 
