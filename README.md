@@ -6,7 +6,8 @@
 
 </div>
 
-A comprehensive full-stack restaurant reservation system built with Java Spring Boot, React (Vite.js), and MySQL. Rezal provides a complete API service solution that restaurants can purchase and integrate into their operations, featuring multi-role dashboards and advanced reservation management capabilities. Group Repository : https://github.com/bariscanaslan/CMPE356-Restaurant-Reservation-System
+A comprehensive full-stack restaurant reservation system built with Java Spring Boot, React (Vite.js), and MySQL. Rezal provides a complete API service solution that restaurants can purchase and integrate into their operations, featuring multi-role dashboards and advanced reservation management capabilities. 
+Group Repository : https://github.com/bariscanaslan/CMPE356-Restaurant-Reservation-System
 
 ## 📋 Table of Contents
 
